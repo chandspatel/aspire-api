@@ -3,17 +3,24 @@
 
 Follow below step to run the App.
 
-- Clone the repository from [Gitlab](https://gitlab.com/chandspatel/aspire-api.git)
+- Clone the repository from [Github](https://github.com/chandspatel/aspire-api.git)
 - After clone project go to that folder and open terminal and hit command 
 
-     **update composer**
+  **composer update**
 - Before migration create database('aspire_db') in your phpmyadmin.
-  now hits command **php artisan migrate** And **php artisan db:seed** .
+  now hits command **php artisan migrate --seed** .
 - To access API start server by hitting command **php artisan serve**
+
+- You can run Feature Test by hitting command **php artisan test**
 
 ## Testing API
 
 This API is developed in laravel  8.83.23 and required PHP version >= 8
+
+Postman Json link :
+
+https://www.getpostman.com/collections/b3bdd624417659839b03
+
 
  **1) API for customer and admin Registration.**
 
@@ -24,10 +31,10 @@ This API is developed in laravel  8.83.23 and required PHP version >= 8
     **Json Params** :
     {
         "name" : "chands",
-        "email" : "chandsadmin@gmail.com",
+        "email" : "chands@gmail.com",
         "password" : "123456",
         "password_confirmation" : "123456",
-        "user_type" : "1"
+        "user_type" : "0"
     }
     Note : user_type : 0 for customer and 1 for admin 
     
@@ -40,7 +47,7 @@ This API is developed in laravel  8.83.23 and required PHP version >= 8
         "message": "Registration Completed Successfully!",
         "user": {
             "name": "chands",
-            "email": "chandsadmin1@gmail.com",
+            "email": "chands@gmail.com",
             "updated_at": "2022-08-13T14:12:06.000000Z",
             "created_at": "2022-08-13T14:12:06.000000Z",
             "id": 6
@@ -69,9 +76,9 @@ This API is developed in laravel  8.83.23 and required PHP version >= 8
     
     **Json Params** :
     {
-        "email" : "admin@gmail.com",
+        "email" : "chands@gmail.com",
         "password" : "123456",
-        "user_type" : "1"
+        "user_type" : "0"
     }
     Note : user_type : 0 for customer and 1 for admin 
     
@@ -86,7 +93,7 @@ This API is developed in laravel  8.83.23 and required PHP version >= 8
         "user": {
             "id": 1,
             "name": "Admin",
-            "email": "admin@gmail.com",
+            "email": "chands@gmail.com",
             "email_verified_at": null,
             "user_type": 1,
             "created_at": "2022-08-13T09:26:45.000000Z",

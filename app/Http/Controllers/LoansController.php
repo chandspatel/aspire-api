@@ -65,6 +65,7 @@ class LoansController extends Controller
 			return response([
 				'data' => $loans,
 				'message' => "Loans approved successfully!",
+				'code' => 200
 			], 200);
 		}
 

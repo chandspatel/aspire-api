@@ -38,12 +38,12 @@ class AuthController extends Controller
 	public function login(Request $requests){
 		$fields = $requests->validate([
 			'email' => 'required|string',
-			'password' => 'required|string:confirmed',
+			'password' => 'required|string',
 			'user_type' => 'required|integer'
 		]);
 
 		$user = User::where(['email' => $fields['email'], 'user_type' => $fields['user_type']])->first();
-
+		//dd(User::all()->toArray());
 		if(!$user || !Hash::check($fields['password'], $user->password)){
 			return response([
 				'message' => 'invalid credentials',
