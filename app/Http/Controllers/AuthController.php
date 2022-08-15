@@ -10,6 +10,11 @@ use App\Models\User;
 class AuthController extends Controller
 {
 
+	/**
+	* Desc  :  This function allows customer and admin to register
+	* Params: Request $requests
+	* Retun : Json response 
+	**/
 	public function register(Request $requests){
 		$fields = $requests->validate([
 			'name' => 'required|string',
@@ -35,6 +40,11 @@ class AuthController extends Controller
 		], 200);
 	}
 
+	/**
+	* Desc  :  This function allows customer and admin to login
+	* Params: Request $requests
+	* Retun : Json response 
+	**/
 	public function login(Request $requests){
 		$fields = $requests->validate([
 			'email' => 'required|string',
@@ -61,6 +71,11 @@ class AuthController extends Controller
 		], 200);
 	}
 
+	/**
+	* Desc  :  This function logout current login users
+	* Params: Request $requests
+	* Retun : Json response 
+	**/
 	public function logout(Request $requests){
 		auth('sanctum')->user()->tokens()->delete();
 

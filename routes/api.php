@@ -21,11 +21,7 @@ Route::post('/login', [AuthController::class,'login']);
 Route::group(['middleware' => ['auth:sanctum']], function(){
     Route::post('/create-loan', [LoansController::class,'createLoan']);
     Route::get('/loans', [LoansController::class,'getLoans']);
-
     Route::post('/approve-loans', [LoansController::class,'approveLoans']);
-
     Route::post('/repayment-loans-amount', [LoansController::class,'repaymentLoansAmount']);
-
-
     Route::post('/logout', [AuthController::class,'logout']);
 });

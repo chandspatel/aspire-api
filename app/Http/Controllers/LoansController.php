@@ -10,6 +10,12 @@ use App\Models\LoanRepayments;
 
 class LoansController extends Controller
 {
+
+	/**
+	* Desc  :  This function create loans of login customer
+	* Params: Request $requests
+	* Retun : Json response 
+	**/
 	public function createLoan(Request $requests){
 		$fields = $requests->validate([
 			'loan_amount' => 'required|numeric',
@@ -29,6 +35,11 @@ class LoansController extends Controller
 		], 200);
 	}
 
+	/**
+	* Desc  :  This function return loans created by login customer.
+	* Params: 
+	* Retun : Json response 
+	**/
 	public function getLoans(){
 
 		$loans = Loans::with(['loanRepayments', 'user']);
@@ -49,6 +60,11 @@ class LoansController extends Controller
 		], 200);
 	}
 
+	/**
+	* Desc  :  This function approve loans created by customer, only admin user can approve loans.
+	* Params: Request $requests
+	* Retun : Json response 
+	**/
 	public function approveLoans(Request $requests){
 		$fields = $requests->validate([
 			'loan_id' => 'required|integer'
@@ -76,6 +92,11 @@ class LoansController extends Controller
 
 	}
 
+	/**
+	* Desc  :  This function is used to pay scheduled repayment loans amount on weekly basis created by customer.
+	* Params: Request $requests
+	* Retun : Json response 
+	**/
 	public function repaymentLoansAmount(Request $requests){
 		$fields = $requests->validate([
 			'repayment_loan_id' => 'required|integer',

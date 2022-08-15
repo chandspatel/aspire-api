@@ -17,9 +17,17 @@ Follow below step to run the App.
 
 This API is developed in laravel  8.83.23 and required PHP version >= 8
 
-Postman Json link :
+**Postman Json link :**
 
 https://www.getpostman.com/collections/b3bdd624417659839b03
+
+
+**Default Admin Credentils:**
+
+**Email:** admin@gmail.com
+
+**Password :** 123456
+
 
 
  **1) API for customer and admin Registration.**
@@ -36,7 +44,7 @@ https://www.getpostman.com/collections/b3bdd624417659839b03
         "password_confirmation" : "123456",
         "user_type" : "0"
     }
-    Note : user_type : 0 for customer and 1 for admin 
+    Note : user_type : 0 for customer and 1 for admin registration
     
     **headers**
         Accept : application/json
@@ -80,7 +88,7 @@ https://www.getpostman.com/collections/b3bdd624417659839b03
         "password" : "123456",
         "user_type" : "0"
     }
-    Note : user_type : 0 for customer and 1 for admin 
+    Note : user_type : 0 for customer and 1 for admin login
     
 
     **headers**
